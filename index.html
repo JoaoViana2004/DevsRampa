@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <title>Projeto Final JP</title>
+</head>
+<body>
+    <div class="Rodape-min" id="barraLateral">
+        <div class="grid">
+            <input class="Botao" type="image" src="Imagens/grid.svg" onclick="Rodape()"/> 
+            <p class="texto">Menu</p>
+        </div>
+        <div class="grid">
+            <input class="Botao" type="image" src="Imagens/calc.svg" onclick="IMC()"/> 
+            <p class="texto">Calculadora de IMC</p>
+        </div>
+
+        <div class="grid">
+            <input class="Botao" type="image" src="Imagens/cart.svg" onclick="LC()"/>
+            <p class="texto">Lista de Compras</p>
+        </div>
+        
+        <div class="grid">
+            <input class="Botao" type="image" src="Imagens/date.svg" onclick="AG()"/> 
+            <p class="texto">Agenda</p>
+        </div>
+    </div>
+
+    <div class="Conteudo-min" id="Conteudo">
+        <div class="Nada" id="IMC">
+            <p class="Titulo">Calculadora de IMC</h2>
+            <div class="Corpo1">
+                <div class="Inputs">
+                    <div class="QuadroInputs">
+                        <label class="Texto1" id="LabelAltura" for="Altura">Altura:</label>
+                        <input type="number" class="Input1" id="Altura">
+                    </div>
+                    <div class="QuadroInputs">
+                        <label class="Texto1" id="LabelPeso" for="Peso">Peso:</label>
+                        <input type="number" class="Input1" id="Peso">
+                    </div>
+                    <button class="Botao2" onclick="CalculaIMC(Altura.value, Peso.value)">Enviar</button>
+                </div>
+                <div class="Resultados">
+                    <div id="1" class = "Nada">
+                        <p class="Texto1">Você esta Abaixo do Peso</p>
+                    </div>
+
+                    <div id="2" class = "Nada">
+                        <p class="Texto1">Você esta No Peso Ideal</p>
+                    </div>
+
+                    <div id="3" class = "Nada">
+                        <p class="Texto1">Você esta com Sobrepeso</p>
+                    </div>
+                    <div id="4" class = "Nada">
+                        <p class="Texto1">Você esta com Obesidade Grau I</p>
+                    </div>
+                    <div id="5" class = "Nada">
+                        <p class="Texto1">Você esta com Obesidade Grau II</p>
+                    </div>
+                    <div id="6" class = "Nada">
+                        <p class="Texto1">Você esta com Obesidade Grau III ou Mórbida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Nada" id="LC">
+            <div class="Corpo1">
+                <p class="Titulo">Lista de Compras</p>
+                <table id="Tabela">
+                    <tr><td class="cabecalho">Índice</td><td class ="cabecalho">Nome</td><td class ="cabecalho">Valor</td></tr>
+                    <tr id="a0" class="Nada"><td class="index">0</td><td>Easter Egg</td><td class="valor">0</td></tr>
+                </table>
+            </div>
+            <div class="Corpo2">
+                <p class="cabecalho" id="total">Valor Total: R$ 0</p>
+                <div class="Corpo3">
+                    <input type="button" value="Adicionar" class="Botao4" onclick="AdicionarL()">
+                    <input type="button" id = "excluir0"value="Excluir" class="Botao5" onclick="Excluir(1)">
+                </div>
+            </div>
+            <div class="Nada" id="Informacoes">
+                <p class="cabecalho" id="LabelInfo">Complete as Informações:   </p>
+                <div class="QuadroInputs">
+                    <input type="text" class="Input2" id="Nome"placeholder="Nome">
+                    <input type="number" class="Input2" id="Valor" placeholder="Valor">
+                    <input type="button" value="Concluido" class="Botao4" onclick="Adicionar(Nome.value, Valor.value)">
+                </div>
+            </div>
+        </div>
+        <div class="Nada" id="AGE">
+            <p class="Titulo">Agenda</p>
+            <div class="Corpo1">
+                <div class="Corpo3">
+                    <div class="Corpo5">
+                        <table id="tabelaComp">
+                            <tr><td class="cabecalho">Índice</td><td class ="cabecalho">Nome do Compromisso</td><td class ="cabecalho">Data</td><td class="cabecalho">Hora</td></tr>
+                        </table>
+                    </div>
+                    <div class="Nada" id="Entrada">
+                        <div class="row">
+                            <p class="Texto2" id="LabelData">Defina a data do Compromisso:</p>
+                            <input id="data" type="date" class="data" name="data">
+                        </div>
+                        <div class="row">
+                            <p class="Texto2" id="LabelHora">Defina a hora do Compromisso:</p>
+                            <input id="hora" type="time" class="hora" name="hora">
+                        </div>
+                        <div class="row">
+                            <p class="Texto2" id="LabelNome">Defina o nome do Compromisso:</p>
+                            <input id="desc" type="text" class="Input1" name="desc">
+                        </div>
+                        <div class="Corpo6">    
+                            <input type="button" class="Botao4" value="Enviar" onclick="CalculaTabela(data.value, hora.value, desc.value)">
+                            <input type="button" class="Botao5" value="Cancelar" onclick="CancelaCalculaTabela(data.value, hora.value, desc.value)">
+                        </div>
+                    </div>
+                    <div class="Corpo6">
+                        <p class="Texto1" id="contador">Eventos Pendentes: 0</p>
+                        <div class="Corpo7">
+                            <input type="button" class="Botao4" id="bt" value="Adicionar Evento" onclick="InputData()">
+                            <input type="button" class="Botao5" id="btn" value="Excluir Evento" onclick="Excluir(2)">
+                        </div>
+                    </div>
+                </div>
+                <div class="Corpo4"></div>
+            </div>
+        </div>
+        <div class="git"> 
+            <a href="https://github.com/JoaoViana2004/DevsRampa"><img src="Imagens/git.svg"></a>  
+            <p class="Texto1">JoaoViana2004</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

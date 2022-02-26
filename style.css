@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@800&display=swap");
+
+input {
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+html,
+body {
+  height: 100%;
+  transition: all 0.5s;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Rodape-max,
+.Rodape-min {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgb(76, 241, 164);
+  transition: all 0.5s;
+}
+.Rodape-min {
+  width: 10%;
+}
+.Rodape-max {
+  width: 20%;
+}
+.Rodape-min .texto {
+  display: none;
+}
+.Rodape-max .texto {
+  color: azure;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  padding-left: 20px;
+}
+.Rodape-min .Botao,
+.Rodape-max .Botao {
+  transition: all 0.2s;
+  border-radius: 10px;
+  width: 50%;
+}
+.Botao:hover {
+  background: rgb(192, 255, 226);
+}
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+.Rodape-min .grid {
+  justify-content: center;
+  width: 200%;
+}
+.Conteudo-min,
+.Conteudo-max {
+  width: 70%;
+  height: 90%;
+  transition: all 0.5s;
+}
+.Conteudo-max {
+  margin-right: 5%;
+}
+.Conteudo-min {
+  margin-right: 10%;
+}
+h1 {
+  width: 50%;
+}
+.CalcIMC,
+.LC,
+.Agenda {
+  border: 1px solid #b4b4b4;
+  border-radius: 10px;
+  box-shadow: 10px 10px 0 0 rgb(64 176 220 / 20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s;
+  gap: 20px;
+}
+.Inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+.QuadroInputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  font-family: "Courier New", Courier, monospace;
+}
+.QuadroInputs input {
+  width: 350px;
+  text-decoration: none;
+}
+.Nada {
+  display: none;
+  transition: all 0.5s;
+}
+.NadaBotao,
+.NadaBotao2 {
+  display: none;
+  transition: all 0.5s;
+}
+.Botao2 {
+  width: 100px;
+}
+.Titulo {
+  font-size: 50px;
+  font-family: "Spartan", sans-serif;
+  color: rgb(76, 241, 164);
+}
+.Texto1, .textoGit {
+  font-size: 25px;
+  font-family: "Spartan", sans-serif;
+}
+.Input1,
+.Input2 {
+  border-top: none;
+  border-bottom: 1px solid #b4b4b4;
+  border-left: none;
+  border-right: none;
+  font-size: 30px;
+  font-family: "Spartan", sans-serif;
+}
+.Botao2,
+.Botao3,
+.Botao4,
+.Botao5,
+.Botao6 {
+  border-radius: 50px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-family: "Spartan", sans-serif;
+  font: bold;
+  font-size: 15px;
+  border: none;
+  transition: all 0.5s;
+}
+.Botao2 {
+  width: 150px;
+  height: 50px;
+  background: rgb(76, 241, 164);
+  margin-bottom: 50px;
+}
+.Botao4 {
+  width: 100px;
+  height: 25px;
+  background: rgb(76, 241, 164);
+  margin-bottom: 0;
+}
+.Botao2:hover,
+.Botao4:hover {
+  transition: all 0.5s;
+  background: rgb(192, 255, 226);
+  color: rgb(76, 241, 164);
+}
+.Botao3,
+.Botao5,
+.Botao6 {
+  height: auto;
+  width: 100px;
+  height: 25px;
+  background: rgb(241, 76, 76);
+}
+.Botao3:hover,
+.Botao5:hover {
+  transition: all 0.5s;
+  background: rgb(255, 192, 192);
+  color: rgb(241, 76, 76);
+}
+table {
+  width: 80%;
+  transition: all 0.5s;
+}
+.cabecalho {
+  font-size: 20px;
+  font-family: "Spartan", sans-serif;
+  color: rgb(0, 0, 0);
+}
+tr,
+td,
+tbody {
+  text-align: center;
+  height: 20%;
+  margin-bottom: none;
+  font-family: "Spartan", sans-serif;
+  color: rgb(66, 66, 66);
+  transition: all 5s;
+}
+.LC .Corpo1,
+.LC .Corpo2,
+.LC .Corpo3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.LC .Corpo1 {
+  flex-direction: column;
+  width: 100%;
+}
+.LC .Corpo2 {
+  justify-content: space-between;
+  width: 80%;
+}
+.LC .Corpo3 {
+  width: 35%;
+  gap: 3%;
+}
+.Texto2 {
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+}
+.Input2 {
+  font-size: 15px;
+}
+.Corpo4 .QuadroInputs {
+  width: 80%;
+  margin-bottom: 5%;
+}
+.Corpo4 input {
+  margin-right: 1%;
+  width: 40%;
+}
+.Corpo4 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 80%;
+}
+.Botao6 {
+  background: rgb(255, 192, 192);
+}
+.Agenda {
+  width: 100%;
+}
+.Agenda .Corpo1 {
+  width: 100%;
+}
+.Agenda .Corpo2,
+.Agenda .Corpo5,
+.Agenda .Corpo3 {
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+  margin-bottom: 20px;
+}
+.Agenda .Corpo3 table {
+  width: 90%;
+}
+.Agenda .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
+}
+.Agenda .data,
+.Agenda .hora {
+  width: 30%;
+  font-size: large;
+  font-family: "Spartan", sans-serif;
+}
+.Corpo6 .Botao4,
+.Corpo6 .Botao5 {
+  width: auto;
+  margin-top: 20px;
+}
+.Corpo7 .Botao4,
+.Corpo7 .Botao5 {
+  width: auto;
+  margin-top: 0;
+}
+.Agenda .Texto2 {
+  font-size: 20px;
+  margin: 0;
+}
+.Agenda .Input1 {
+  width: 30%;
+  font-size: medium;
+}
+#contador {
+  font-size: 20px;
+}
+.Corpo6 {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10%;
+}
+.Corpo7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Errado {
+  color: #ff0000;
+}
+.git, .git a{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.textoGit{
+  text-decoration: none;
+}
+.git a{
+  width: 100%;
+  height: 100%;
+}
+.git a img{
+  width: 10%;
+  height: 10%;
+}
