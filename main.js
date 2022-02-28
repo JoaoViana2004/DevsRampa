@@ -351,6 +351,9 @@ function ExcluirCompromisso(indc) {
   }
   reorganizaTabela(objts);
   excluir2 = false;
+  if(objts == 0){
+    excluir2 = true;
+  }
   Excluir(2);
 }
 function ContaCompromissos() {
