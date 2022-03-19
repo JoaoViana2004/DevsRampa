@@ -332,8 +332,7 @@ tbody {
 .Errado {
   color: #ff0000;
 }
-.git, .git a{
-  margin-top: 20px;
+.git{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -343,10 +342,18 @@ tbody {
   text-decoration: none;
 }
 .git a{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.git a img{
   width: 100%;
   height: 100%;
 }
-.git a img{
-  width: 10%;
-  height: 10%;
+.Imagens{margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
