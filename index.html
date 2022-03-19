@@ -31,7 +31,7 @@
         <div class="Nada" id="IMC">
             <p class="Titulo">Calculadora de IMC</h2>
             <div class="Corpo1">
-                <div class="Inputs">
+                <form class="Inputs" id="FormularioIMC">
                     <div class="QuadroInputs">
                         <label class="Texto1" id="LabelAltura" for="Altura">Altura:</label>
                         <input type="number" class="Input1" id="Altura">
@@ -40,8 +40,8 @@
                         <label class="Texto1" id="LabelPeso" for="Peso">Peso:</label>
                         <input type="number" class="Input1" id="Peso">
                     </div>
-                    <button class="Botao2" onclick="CalculaIMC(Altura.value, Peso.value)">Enviar</button>
-                </div>
+                    <button class="Botao2" onclick="CalculaIMC(Altura.value, Peso.value); return false;">Enviar</button>
+                </form >
                 <div class="Resultados">
                     <div id="1" class = "Nada">
                         <p class="Texto1">Você esta Abaixo do Peso</p>

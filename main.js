@@ -1,92 +1,140 @@
 lateral = false;
-imc = false;
 excluir = false;
 excluir2 = false;
 ad = false;
 objs = new Array();
 
+imc = false
+lcc = false
+agee = false
+
+AbaIMC = document.getElementById("IMC")
+AbaLC = document.getElementById("LC")
+AbaAGE = document.getElementById("AGE")
+
+BL = document.getElementById("barraLateral")
+Conteudo = document.getElementById("Conteudo")
+
+ListaIMC = [
+  document.getElementById("1"),
+  document.getElementById("2"),
+  document.getElementById("3"),
+  document.getElementById("4"),
+  document.getElementById("5"),
+  document.getElementById("6")]
+
+FormularioIMC = document.getElementById("FormularioIMC")
+
+entrada =  document.getElementById("entrada")
+bt = document.getElementById("bt")
+btn = document.getElementById("btn")
+contador = document.getElementById("contador")
+
+LabelAltura = document.getElementById("LabelAltura")
+LabelPeso = document.getElementById("LabelPeso")
+
 function Rodape() {
   if (lateral) {
     lateral = false;
-    MudaCSS("barraLateral", "Rodape-max", "Rodape-min");
-    MudaCSS("Conteudo", "Conteudo-max", "Conteudo-min");
+    MudaCSS(BL, "Rodape-min");
+    MudaCSS(Conteudo, "Conteudo-min");
   } else {
     lateral = true;
-    ZeraTudo();
-    MudaCSS("barraLateral", "Rodape-min", "Rodape-max");
-    MudaCSS("Conteudo", "Conteudo-min", "Conteudo-max");
+    ZeraTudo(AbaAGE,AbaLC,AbaIMC);
+    MudaCSS(BL, "Rodape-max");
+    MudaCSS(Conteudo, "Conteudo-max");
   }
 }
 function IMC() {
-  ZeraTudo();
-  if (imc == false) {
+  ZeraTudo(AbaAGE,AbaLC,AbaIMC, imc,0);
+  if(imc == false){
     imc = true;
-    MudaCSS("IMC", "Nada", "CalcIMC");
-  } else {
+    MudaCSS(AbaIMC, "CalcIMC");
+  }else if(imc==true){
     imc = false;
-    MudaCSS("IMC", "CalcIMC", "Nada");
+    MudaCSS(AbaIMC, "Nada");
   }
 }
 function LC() {
-  ZeraTudo();
-  MudaCSS("LC", "Nada", "LC");
+  ZeraTudo(AbaAGE,AbaLC,AbaIMC,lcc,1);
+  if(lcc == false){
+    lcc = true;
+    MudaCSS(AbaLC, "LC");
+  }else if(lcc==true){
+    lcc = false;
+    MudaCSS(AbaLC, "Nada");
+  }
 }
 function AG() {
-  ZeraTudo();
-  MudaCSS("AGE", "Nada", "Agenda");
+  ZeraTudo(AbaAGE,AbaLC,AbaIMC,agee,2);
+  if(agee == false){
+    agee = true;
+    MudaCSS(AbaAGE, "Agenda");
+  }else if(agee==true){
+    agee = false;
+    MudaCSS(AbaAGE, "Nada");
+  }
 }
 function CalculaIMC(altura, peso) {
   retorno = false;
   if (altura == "") {
-    document.getElementById("LabelAltura").style.color = "red";
+    LabelAltura.style.color = "red";
     retorno = true;
   } else {
-    document.getElementById("LabelAltura").style.color = "black";
+    LabelAltura.style.color = "black";
   }
   if (peso == "") {
-    document.getElementById("LabelPeso").style.color = "red";
+    LabelPeso.style.color = "red";
     retorno = true;
   } else {
-    document.getElementById("LabelPeso").style.color = "black";
+    LabelPeso.style.color = "black";
   }
 
   if (retorno) {
+    console.log("Parei, Faltaram Variaveis")
     return;
   }
+
+  console.log("Enviei as Variaveis")
   ZeraIMC();
   let result = peso / (altura * altura);
   if (result < 18.5) {
-    MudaCSS("1", "Nada", "1");
+    MudaCSS(ListaIMC[0], "1");
   } else if (result >= 18.5 && result < 24.9) {
-    MudaCSS("2", "Nada", "2");
+    MudaCSS(ListaIMC[1], "2");
   } else if (result >= 24.9 && result < 30) {
-    MudaCSS("3", "Nada", "3");
+    MudaCSS(ListaIMC[2], "3");
   } else if (result >= 30 && result < 35) {
-    MudaCSS("4", "Nada", "4");
+    MudaCSS(ListaIMC[3], "4");
   } else if (result >= 35 && result < 40) {
-    MudaCSS("5", "Nada", "5");
+    MudaCSS(ListaIMC[4], "5");
   } else {
-    MudaCSS("6", "Nada", "1");
+    MudaCSS(ListaIMC[5], "1");
   }
-
-  console.log(result);
 }
 function ZeraIMC() {
-  MudaCSS("1", "1", "Nada");
-  MudaCSS("2", "2", "Nada");
-  MudaCSS("3", "3", "Nada");
-  MudaCSS("4", "4", "Nada");
-  MudaCSS("5", "5", "Nada");
-  MudaCSS("6", "6", "Nada");
-
-  document.getElementById("Altura").value = "";
-  document.getElementById("Peso").value = "";
+  for(x of ListaIMC){
+    MudaCSS(x,"Nada")
+  }
+  FormularioIMC.reset()
 }
-function ZeraTudo() {
-  MudaCSS("IMC", "CalcIMC", "Nada");
-  MudaCSS("LC", "LC", "Nada");
-  MudaCSS("AGE", "AGE", "Nada");
+function ZeraTudo(a,b,c,d,e) {
+  MudaCSS(a, "Nada");
+  MudaCSS(b, "Nada");
+  MudaCSS(c, "Nada");
   imc = false;
+  lcc = false;
+  agee = false;
+  if(d != undefined){
+    if(e == 0){
+      imc = d
+    }else if (e == 1){
+      lcc = d
+    }
+    else if (e == 2){
+      agee = d
+    }
+  }
 }
 function Excluir(op) {
   if (op == 1) {
@@ -207,14 +255,13 @@ function Remove(comp) {
   }
 }
 function InputData() {
-  MudaCSS("Entrada", "Nada", "Corpo2");
-  MudaCSS("bt", "Botao4", "Nada");
-  MudaCSS("btn", "Botao5", "Nada");
-  MudaCSS("contador", "Texto1", "Nada");
+  MudaCSS(Entrada, "Corpo2");
+  MudaCSS(bt, "Nada");
+  MudaCSS(btn, "Nada");
+  MudaCSS(contador, "Nada");
 }
-function MudaCSS(id, antiga, nova) {
-  document.getElementById(id).classList.add(nova);
-  document.getElementById(id).classList.remove(antiga);
+function MudaCSS(elemento, nova) {
+  elemento.classList = nova
 }
 function refatoraData(data, hora) {
   ano = data.slice(0, 4);
@@ -280,10 +327,10 @@ function CalculaTabela(data, hora, nome) {
     return;
   }
 
-  MudaCSS("Entrada", "Corpo2", "Nada");
-  MudaCSS("bt", "Nada", "Botao4");
-  MudaCSS("btn", "Nada", "Botao5");
-  MudaCSS("contador", "Nada", "Texto1");
+  MudaCSS(Entrada, "Nada");
+  MudaCSS(bt, "Botao4");
+  MudaCSS(btn, "Botao5");
+  MudaCSS(contador, "Texto1");
 
   dataCompleta = refatoraData(data, hora);
   compAtual = new Object();
@@ -307,10 +354,10 @@ function CalculaTabela(data, hora, nome) {
   }
 }
 function CancelaCalculaTabela() {
-  MudaCSS("Entrada", "Corpo2", "Nada");
-  MudaCSS("bt", "Nada", "Botao4");
-  MudaCSS("btn", "Nada", "Botao5");
-  MudaCSS("contador", "Nada", "Texto1");
+  MudaCSS(Entrada, "Nada");
+  MudaCSS(bt, "Botao4");
+  MudaCSS(btn, "Botao5");
+  MudaCSS(contador, "Texto1");
 }
 function reorganizaTabela(objts) {
   ContaCompromissos();
